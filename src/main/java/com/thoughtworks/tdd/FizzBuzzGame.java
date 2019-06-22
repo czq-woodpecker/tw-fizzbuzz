@@ -6,6 +6,19 @@ package com.thoughtworks.tdd;
  */
 public class FizzBuzzGame {
     public String fizzBuzz(int number) {
-        return null;
+        String result = "";
+        if(number % 3 == 0 ) {
+            result = "Fizz";
+        }
+        if(number % 5 == 0 ) {
+            result += "Buzz";
+        }
+        if(number % 7 == 0 ) {
+            result += "Whizz";
+        }
+        if("".equals(result)) {
+            result += number;
+        }
+        return result;
     }
 }
