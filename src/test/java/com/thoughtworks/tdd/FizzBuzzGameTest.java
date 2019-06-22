@@ -1,6 +1,8 @@
 package com.thoughtworks.tdd;
 
 
+import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -12,12 +14,16 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * 特殊数为3、5、7，下面的例子都是以某个数是否为特殊数的整数倍为例。
  */
 public class FizzBuzzGameTest {
+    FizzBuzzGame game;
+
+    @BeforeEach
+    public void init() {
+        //given
+        game = new FizzBuzzGame();
+    }
 
     @Test
     public void should_return_FizzBuzzWhizz_when_input_is_a_multiple_of_3_and_5_and_7() {
-        //given
-        FizzBuzzGame game = new FizzBuzzGame();
-
         //when
         String actualStr1 = game.fizzBuzz(105);
         String actualStr2 = game.fizzBuzz(210);
@@ -29,9 +35,6 @@ public class FizzBuzzGameTest {
 
     @Test
     public void should_return_FizzBuzz_when_input_is_a_multiple_of_3_and_5_only() {
-        //given
-        FizzBuzzGame game = new FizzBuzzGame();
-
         //when
         String actualStr1 = game.fizzBuzz(15);
         String actualStr2 = game.fizzBuzz(30);
@@ -43,9 +46,6 @@ public class FizzBuzzGameTest {
 
     @Test
     public void should_return_FizzWhizz_when_input_is_a_multiple_of_3_and_7_only() {
-        //given
-        FizzBuzzGame game = new FizzBuzzGame();
-
         //when
         String actualStr1 = game.fizzBuzz(21);
         String actualStr2 = game.fizzBuzz(42);
@@ -57,8 +57,6 @@ public class FizzBuzzGameTest {
 
     @Test
     public void should_return_BuzzWhizz_when_input_is_a_multiple_of_5_and_7_only() {
-        //given
-        FizzBuzzGame game = new FizzBuzzGame();
         //when
         String actualStr1 = game.fizzBuzz(35);
         String actualStr2 = game.fizzBuzz(70);
@@ -69,7 +67,6 @@ public class FizzBuzzGameTest {
 
     @Test
     public void should_return_Fizz_when_input_is_a_multiple_of_3_only() {
-        FizzBuzzGame game = new FizzBuzzGame();
         String actualStr1 = game.fizzBuzz(3);
         String actualStr2 = game.fizzBuzz(6);
         assertThat(actualStr1, is("Fizz"));
@@ -78,21 +75,18 @@ public class FizzBuzzGameTest {
 
     @Test
     public void should_return_Buzz_when_input_is_a_multiple_of_5_only() {
-        FizzBuzzGame game = new FizzBuzzGame();
         assertThat(game.fizzBuzz(5), is("Buzz"));
         assertThat(game.fizzBuzz(10), is("Buzz"));
     }
 
     @Test
     public void should_return_Whizz_when_input_is_a_multiple_of_7_only() {
-        FizzBuzzGame game = new FizzBuzzGame();
         assertThat(game.fizzBuzz(7), is("Whizz"));
         assertThat(game.fizzBuzz(14), is("Whizz"));
     }
 
     @Test
     public void should_return_n_when_input_n_except_above_situations() {
-        FizzBuzzGame game = new FizzBuzzGame();
         assertThat(game.fizzBuzz(1), is("1"));
         assertThat(game.fizzBuzz(2), is("2"));
         assertThat(game.fizzBuzz(4), is("4"));
