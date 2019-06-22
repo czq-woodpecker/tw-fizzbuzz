@@ -52,3 +52,13 @@ for( int i = 0; i < 120; i++) {
 
 已经存在的代码主要讲解如何使用测试,我们看到HelloWorldTest下有两个测试,第一个测试演示了如何进行集成测试和使用Assert。
 第二个测试演示了如何进行mock。
+
+#tasking
+1. should_return_FizzBuzzWhizz_when_input_is_a_multiple_of_3_and_5_and_7
+2. should_return_FizzBuzz_when_input_is_a_multiple_of_3_and_5_only
+3. should_return_FizzWhizz_when_input_is_a_multiple_of_3_and_7_only
+4. should_return_BuzzWhizz_when_input_is_a_multiple_of_5_and_7_only
+5. should_return_Fizz_when_input_is_a_multiple_of_3_only
+6. should_return_Buzz_when_input_is_a_multiple_of_5_only
+7. should_return_Whizz_when_input_is_a_multiple_of_7_only
+8. should_return_n_when_input_n_except_above_situations
